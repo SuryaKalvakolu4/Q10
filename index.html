@@ -26,14 +26,14 @@
     </style>
 </head>
 <body>
-    <h1>Station 15</h1>
+    <h1>Control Valve for Filter Regulation</h1>
     <div id="question"></div>
     <div id="options"></div>
-    <button onclick="nextQuestion()">SUBMIT</button>
+    <button onclick="nextQuestion()">Submit</button>
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("Station_15_Score");
+    localStorage.removeItem("Filter_Regulation");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -48,14 +48,14 @@ window.addEventListener('beforeunload', function() {
         // Quiz questions and answers
         const quiz = [
             {
-                question: "What is on the 2nd floor of the Tiefengruben waterworks?",
-                options: ["The lower part of the filter tanks", "3 parallel operated open atomization chambers", "Upper part of the three independent quick filters"],
+                question: "What is on the 2nd Floor of the Tiefengruben Waterworks?",
+                options: ["The Lower Part of the Filter Tanks", "3 Parallel Operated Open Atomization Chambers", "Upper Part of the Three Independent Quick Filters"],
                 answer: 2
             }
         ];
 
         let currentQuestion = 0;
-        let Station_15_Score = 0;
+        let Filter_Regulation = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -99,9 +99,9 @@ window.addEventListener('beforeunload', function() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        Station_15_Score = 0; // Assign zero score if question is not attempted or answered incorrectly
+        Filter_Regulation = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        Station_15_Score++; // Increment score for correct answer
+        Filter_Regulation++; // Increment score for correct answer
     }
 }
 
@@ -112,8 +112,8 @@ window.addEventListener('beforeunload', function() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("Station_15_Score", Station_15_Score);
-                alert("Quiz completed. Your score is " + Station_15_Score);
+                localStorage.setItem("Filter_Regulation", Filter_Regulation);
+                alert("Quiz completed. Your score is " + Filter_Regulation);
             } else {
                 displayQuestion();
             }
